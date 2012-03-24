@@ -1,8 +1,12 @@
-import wx
+## Importing Std Libraries ##
 import urllib
-import tempfile
 import os
 import sys
+import tempfile
+
+## Importing 3rd-Party Libraries ##
+import wx
+
 
 class updateDialog():
     try:
@@ -11,7 +15,7 @@ class updateDialog():
         #Example upgradeFile: https://raw.github.com/Seafire-Software/Seapad/master/SeaPad.py
         upgradeFile = "SET-YOUR-FILE-UPGRADING-WEB-PATH-HERE"
         
-        
+        # tempfile.gettempdir() is a cross-platform way to find the temporary directory of the current OS
         tempDir = tempfile.gettempdir()
         webFile = urllib.urlretrieve(upFile, tempDir + '/curVersion')
         basVer = open(tempDir + '/curVersion')
@@ -35,4 +39,5 @@ class updateDialog():
         else:
             wx.MessageBox("Something went wrong with the update. Please try again. If it happens again, file a bug report please.", "Error!", wx.OK | wx.ICON_ERROR)            
     except:
+        ## The Error number (10152) is optional. You can remove if you don't add it on your site somewhere. ##
         wx.MessageBox("There was an error (Error 10152). Maybe you are not connected to the internet? Try again please.", "Try again.", wx.OK)
