@@ -25,10 +25,12 @@ class updateDialog():
             result = dlg.ShowModal()
             dlg.Destroy()
             if result == wx.ID_YES:
+		#Check if the currently running operating system is linux
                 if sys.platform == "linux2":
                     #Example upgradeFile: https://raw.github.com/Seafire-Software/Seapad/master/SeaPad.py
                     upgradeFile = "SET-YOUR-UPGRADE-FILE-HERE"
-                elif sys.platform == "win32":
+                #Check if the currently running operating system is Windows
+		elif sys.platform == "win32":
                     #Example upgradeFile: https://raw.github.com/Seafire-Software/Seapad/master/SeaPad.exe
                     upgradeFile = "https://github.com/Seafire-Software/Anansi-CalcPad/blob/master/Binary/Anansi-CalcPad-Setup.exe?raw=true"
                    
