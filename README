@@ -1,0 +1,3 @@
+This is a rather simple updater for your python program.
+
+Basically, you need a 1-line file uploaded to a server (such as github), that says the most recent version (in float form, or decimal form, like 0.51, etc...) and 
